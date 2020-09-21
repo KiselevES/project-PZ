@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400">
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>project PZ</title>
+
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="outer">
+                <div class="logo">
+                    <img class="logo__img" src="img/logo-akson-1.jpg" alt="logo">
+                </div>
+                <div class="header-text">Отслеживание просроченных заказов</div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="container set-height">
+            <div class="orders">
+                <div class="table"></div>
+                <div class="new-table">
+                    <tr>
+                        <th>Порядковый номер</th>
+                        <th>Номер заказа</th>
+                        <th>В очереди</th>
+                        <th>В наборе</th>
+                        <th>Время</th>
+                    </tr>
+                </div>
+            </div>
+            <div class="options">
+                <div class="input__outer">
+                    <input class="options__time-to-expire input" id="expire" type="text" placeholder="30">
+                    <button class="options__time-to-expire-button options__button">Изменить</button>
+                    <label class="options__label" for="expire">Минут до просрочки</label>
+                </div>
+
+                <div class="input__outer">
+                    <input class="options__time-to-send-message input" id="message" type="text" placeholder="23">
+                    <button class="options__time-to-send-message-button options__button">Изменить</button>
+                    <label class="options__label" for="message">Минут до сообщения</label>
+                </div>
+
+                <div class="input__outer">
+                    <input class="options__request-interval input" id="interval" type="text" placeholder="30" placeholder="30">
+                    <button class="options__request-interval-button options__button">Изменить</button>
+                    <label class="options__label" for="interval">Секунд - интервал запросов на сервер</label>
+                </div>
+            </div>
+            <h3 class="expired-orders__header">Просроченные заказы:</h3>
+            <div class="expired-orders">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+
+    </div>
+</footer>
+<script src="js/js.min.js"></script>
+</body>
+</html>
