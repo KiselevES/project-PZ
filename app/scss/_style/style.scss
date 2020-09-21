@@ -77,7 +77,6 @@ body {
 }
 
 
-
 td {
   width: 90px;
   height: 20px;
@@ -93,9 +92,56 @@ td {
 
 .new-table {
   border: 1px solid #e9011b;
-  display: block;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   border-radius: 10px;
+  border-spacing: 0;
+  overflow: hidden;
+  background: #bababa;
+  margin-bottom: 10px;
+
+  thead {
+    background: #e9011b;
+    color: #fff;
+    font-family: $body-font;
+  }
+
+  tbody:nth-child(2n) {
+    background: #d0d0d0;
+  }
 }
+
+.new-table__header-cell {
+  border-top: 0;
+  border-right: 0;
+  border-left: 1px solid #e9011b;
+  border-bottom: 1px solid #e9011b;
+
+  &:first-child {
+    border-left: 0;
+  }
+}
+
+.new-table__order-warning {
+  background: #fdcd18;
+}
+
+.new-table__order-expired {
+  background: #d0d0d0;
+  color: #fff;
+}
+
+.new-table__cell {
+  border-top: 0;
+  border-right: 0;
+  border-left: 1px solid #e9011b;
+  border-bottom: 0;
+
+
+  &:first-child {
+    border-left: 0;
+    width: 30px;
+  }
+}
+
 

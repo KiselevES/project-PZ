@@ -30,9 +30,18 @@ function getSameOrder(newContentObject, orderNumber) {
 
 function isOrderRemade(mainObject, orderNumber) {
     for (let i = 0; i < mainObject.orders.length; i++) {
-        if (mainObject.orders[i].orderNumber === orderNumber && mainObject.orders[i].isComplete === true) {
+        if (mainObject.orders[i].orderNumber === orderNumber && mainObject.orders[i].complete === true) {
             return true;
         }
     }
     return false;
+}
+
+function secondsTimeToNormal(seconds) {
+    let minutes = Math.floor(seconds / 60) + '';
+    let secs = seconds % 60 + '';
+    if (secs.length < 2) {
+        secs = '0' + secs;
+    }
+    return result = minutes + ':' + secs
 }

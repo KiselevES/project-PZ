@@ -9,6 +9,7 @@ class orderClass {
         this.inQueue = false;
         this.preparing = false;
         this.orderNumber = orderNumber;
+        this.needMessage = false;
         this.remade = false;
     }
 
@@ -18,6 +19,11 @@ class orderClass {
 
     setMessageSent() {
         this.messageSent = true;
+        this.needMessage = false;
+    }
+
+    setNeedMessage(){
+        this.needMessage = true;
     }
 
     setTime(time) {

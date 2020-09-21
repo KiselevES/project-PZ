@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     model.callExternalContent()
         .then((response) => {
             model.getContent(response);
+            model.getWarning();
+            view.sendMessages();
+            view.drawTable();
         })
-        .then((mainObject)=> {
-            view.drawTable(mainObject);
-        })
+
 
 
 

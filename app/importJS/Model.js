@@ -25,8 +25,8 @@ const model = {
         //вытаскиваем таблицу из исходного кода
         const cutExternalContent = externalContent.substr(3196, externalContent.length - 3370);
         //console.log(cutExternalContent);
-        const table = document.querySelector('.table');
-        table.innerHTML = cutExternalContent;
+        const hiddenTable = document.querySelector('.hidden-table');
+        hiddenTable.innerHTML = cutExternalContent;
         //вытаскиваем строки
         const rows = document.getElementsByTagName('tr');
         //переменная для строк фильтрованной таблицы
@@ -61,7 +61,7 @@ const model = {
         })
 
         //удаляем таблицу
-        table.innerHTML = '';
+        hiddenTable.innerHTML = '';
 
         if (!isMainObjectExists()) {
             setMainObject(newContentObject);
@@ -85,6 +85,7 @@ const model = {
                 currentOrder.remade = item.remade;
                 currentOrder.unixTime = item.unixTime;
                 currentOrder.date = item.date;
+                currentOrder.needMessage = item.needMessage;
                 mainObject.orders.push(currentOrder);
             })
 
@@ -115,6 +116,7 @@ const model = {
                             mainObject.orders[i].inQueue = item.inQueue;
                             mainObject.orders[i].preparing = item.preparing;
                             mainObject.orders[i].date = item.date;
+                            mainObject.orders[i].needMessage = item.needMessage;
                         }
                     }
                 }
@@ -131,7 +133,7 @@ const model = {
 
             mainObject.orders.forEach((item) => {
                 if (item.completeTime > mainObject.expirationTime) {
-                    item.expired = true;
+                    item.setExpired();
                 }
             })
 
@@ -145,9 +147,16 @@ const model = {
 
             setMainObject(mainObject);
             console.log(mainObject);
-            return mainObject;
         }
+    },
+
+    getWarning() {
+        const mainObject = getMainObject();
+        mainObject.orders.forEach((item) => {
+            if (parseInt(new Date().getTime() / 1000) - item.unixTime > mainObject.messageTime) {
+                item.needMessage = true;
+            }
+        })
+        setMainObject(mainObject);
     }
-
-
 }

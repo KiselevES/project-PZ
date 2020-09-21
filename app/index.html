@@ -25,16 +25,8 @@
     <div class="main">
         <div class="container set-height">
             <div class="orders">
-                <div class="table"></div>
-                <div class="new-table">
-                    <tr>
-                        <th>Порядковый номер</th>
-                        <th>Номер заказа</th>
-                        <th>В очереди</th>
-                        <th>В наборе</th>
-                        <th>Время</th>
-                    </tr>
-                </div>
+                <table class="hidden-table"></table>
+                <table class="new-table" border="0"></table>
             </div>
             <div class="options">
                 <div class="input__outer">
@@ -55,11 +47,6 @@
                     <label class="options__label" for="interval">Секунд - интервал запросов на сервер</label>
                 </div>
             </div>
-            <h3 class="expired-orders__header">Просроченные заказы:</h3>
-            <div class="expired-orders">
-
-            </div>
-
         </div>
     </div>
 </div>
