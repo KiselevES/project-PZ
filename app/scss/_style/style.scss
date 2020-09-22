@@ -97,7 +97,7 @@ td {
   border-radius: 10px;
   border-spacing: 0;
   overflow: hidden;
-  background: #bababa;
+ // background: #bababa;
   margin-bottom: 10px;
 
   thead {
@@ -106,9 +106,9 @@ td {
     font-family: $body-font;
   }
 
-  tbody:nth-child(2n) {
-    background: #d0d0d0;
-  }
+  //tbody:nth-child(2n) {
+  //  background: #d0d0d0;
+  //}
 }
 
 .new-table__header-cell {
@@ -123,12 +123,19 @@ td {
 }
 
 .new-table__order-warning {
-  background: #fdcd18;
+  background: rgba(253,205,24, .3);
 }
 
 .new-table__order-expired {
-  background: #d0d0d0;
-  color: #fff;
+  background: rgba(233,1,27, .3);
+}
+
+.new-table__order-normal {
+  background: rgba(117, 233, 1, .3);
+}
+
+.new-table__order-remade {
+  background: rgba(1, 105, 233, .3);
 }
 
 .new-table__cell {

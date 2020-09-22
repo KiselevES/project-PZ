@@ -6,8 +6,8 @@ const model = {
             const x = new XMLHttpRequest();
 
             //ajax запрос через прокси cors-anywhere
-            //x.open('GET', 'https://cors-anywhere.herokuapp.com/https://akson.ru/personal/order/table1/?STORE_ID=11');
-            x.open('GET', 'pz4.html');
+            x.open('GET', 'https://cors-anywhere.herokuapp.com/https://akson.ru/personal/order/table1/?STORE_ID=11');
+            //x.open('GET', 'pz4.html');
 
             //x.timeout = 5000;
             x.send();
@@ -107,7 +107,7 @@ const model = {
                 if (isOrderRemade(mainObject, item.orderNumber)) {
                     for (let i = 0; i < mainObject.orders.length; i++) {
                         if (mainObject.orders[i].orderNumber === item.orderNumber) {
-                            mainObject.orders[i].setRemade();
+                            mainObject.orders[i].remade = true;
                             mainObject.orders[i].expired = item.expired;
                             mainObject.orders[i].messageSent = false;
                             mainObject.orders[i].unixTime = parseInt(new Date().getTime() / 1000);
@@ -144,19 +144,20 @@ const model = {
                 }
             }
 
-
             setMainObject(mainObject);
-            console.log(mainObject);
         }
     },
 
-    getWarning() {
+    setWarning() {
         const mainObject = getMainObject();
+        console.log(mainObject);
         mainObject.orders.forEach((item) => {
-            if (parseInt(new Date().getTime() / 1000) - item.unixTime > mainObject.messageTime) {
+            if (parseInt(new Date().getTime() / 1000) - item.unixTime > mainObject.messageTime && !item.complete && !item.messageSent) {
                 item.needMessage = true;
             }
         })
         setMainObject(mainObject);
     }
+
+
 }

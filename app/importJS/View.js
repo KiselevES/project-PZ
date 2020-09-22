@@ -56,10 +56,10 @@ view = {
                 complete = 'X';
             }
             let time = secondsTimeToNormal(item.completeTime);
-            if (item.date === parseInt(new Date().getDate()) && item.expired === false && item.messageSent === false) {
+            if (item.date === parseInt(new Date().getDate()) && item.remade && !item.messageSent) {
                 newTable.insertAdjacentHTML('beforeend', `
                     <tbody>
-                        <tr class="new-table__row">
+                        <tr class="new-table__row new-table__order-remade">
                             <td class="new-table__cell">${counter}</td>
                             <td class="new-table__cell">${item.orderNumber}</td>
                             <td class="new-table__cell">${inQueue}</td>
@@ -69,10 +69,10 @@ view = {
                         </tr>
                     </tbody>`
                 )
-            } else if (item.date === parseInt(new Date().getDate()) && item.expired === false && item.messageSent === true) {
+            } else if (item.date === parseInt(new Date().getDate()) && !item.expired && !item.messageSent) {
                 newTable.insertAdjacentHTML('beforeend', `
-                    <tbody class="new-table__order-warning">
-                        <tr class="new-table__row">
+                    <tbody>
+                        <tr class="new-table__row new-table__order-normal">
                             <td class="new-table__cell">${counter}</td>
                             <td class="new-table__cell">${item.orderNumber}</td>
                             <td class="new-table__cell">${inQueue}</td>
@@ -82,10 +82,23 @@ view = {
                         </tr>
                     </tbody>`
                 )
-            } else if (item.date === parseInt(new Date().getDate()) && item.expired === true && item.messageSent === true) {
+            } else if (item.date === parseInt(new Date().getDate()) && !item.expired && item.messageSent) {
                 newTable.insertAdjacentHTML('beforeend', `
-                    <tbody class="new-table__order-expired">
-                        <tr class="new-table__row">
+                    <tbody>
+                        <tr class="new-table__row new-table__order-warning">
+                            <td class="new-table__cell">${counter}</td>
+                            <td class="new-table__cell">${item.orderNumber}</td>
+                            <td class="new-table__cell">${inQueue}</td>
+                            <td class="new-table__cell">${preparing}</td>
+                            <td class="new-table__cell">${complete}</td>
+                            <td class="new-table__cell">${time}</td>
+                        </tr>
+                    </tbody>`
+                )
+            } else if (item.date === parseInt(new Date().getDate()) && item.expired && item.messageSent) {
+                newTable.insertAdjacentHTML('beforeend', `
+                    <tbody>
+                        <tr class="new-table__row new-table__order-expired">
                             <td class="new-table__cell">${counter}</td>
                             <td class="new-table__cell">${item.orderNumber}</td>
                             <td class="new-table__cell">${inQueue}</td>
@@ -103,18 +116,11 @@ view = {
     },
 
     sendMessage(message) {
-        return new Promise((resolve, reject) => {
-            const x = new XMLHttpRequest();
-            x.open('GET', 'https://api.telegram.org/bot1018757013:AAEHO9accUhscieT0ArRq9iwUeat6BmEzOM/sendMessage?chat_id=-1001471677614&text=' + message);
-            x.send();
-            x.onload = () => {
-                if (x.status != 200) {
-                    reject(x.statusText)
-                } else {
-                    resolve(x.responseText || '');
-                }
-            };
-        })
+        const x = new XMLHttpRequest();
+        x.open('GET', 'https://api.telegram.org/bot1018757013:AAEHO9accUhscieT0ArRq9iwUeat6BmEzOM/sendMessage?chat_id=-1001471677614&text=' + message);
+        x.send();
+
+
     },
 
     sendMessages() {
@@ -122,10 +128,18 @@ view = {
         mainObject.orders.forEach((item) => {
             if (item.needMessage === true) {
                 this.sendMessage('Заказ ' + item.orderNumber + ' в наборе уже более ' + mainObject.expirationTime / 60 + ' минут');
-                mainObject.messageSent = true;
-                mainObject.needMessage = false;
+                //console.log('Заказ ' + item.orderNumber + ' в наборе уже более ' + mainObject.expirationTime / 60 + ' минут')
+                item.messageSent = true;
+                item.needMessage = false;
             }
         })
         setMainObject(mainObject);
+    },
+
+    setPlaceholders() {
+        const mainObject = getMainObject();
+        document.querySelector('.options__time-to-expire').placeholder = mainObject.expirationTime / 60;
+        document.querySelector('.options__time-to-send-message').placeholder = mainObject.messageTime / 60;
+        document.querySelector('.options__request-interval').placeholder = mainObject.requestInterval;
     }
 }
