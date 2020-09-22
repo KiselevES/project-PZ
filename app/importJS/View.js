@@ -1,33 +1,7 @@
-view = {
+const view = {
     drawTable() {
         const mainObject = getMainObject();
         const newTable = document.querySelector('.new-table');
-        newTable.innerHTML = '';
-        // const tableHeader = document.createElement('tr');
-        // tableHeader.classList.add('new-table__header');
-        // newTable.appendChild(tableHeader);
-        // const tableHeaderCellNumber = document.createElement('th');
-        // tableHeaderCellNumber.classList.add('new-table__header-cell');
-        // tableHeaderCellNumber.textContent= '№';
-        // tableHeader.appendChild(tableHeaderCellNumber);
-        // const tableHeaderCellOrderNumber = document.createElement('th');
-        // tableHeaderCellOrderNumber.classList.add('new-table__header-cell');
-        // tableHeaderCellOrderNumber.textContent = '№ заказа';
-        // tableHeader.appendChild(tableHeaderCellOrderNumber);
-        // const tableHeaderOrderInQueue = document.createElement('th');
-        // tableHeaderOrderInQueue.classList.add('new-table__header-cell');
-        // tableHeaderOrderInQueue.textContent='В очереди';
-        // tableHeader.appendChild(tableHeaderOrderInQueue);
-        // const tableHeaderOrderIsPreparing = document.createElement('tr');
-        // tableHeaderOrderIsPreparing.classList.add('new-table__header-cell');
-        // tableHeaderOrderIsPreparing.textContent = 'В наборе';
-        // tableHeader.appendChild(tableHeaderOrderIsPreparing);
-        // const tableHeaderTime = document.createElement('tr');
-        // tableHeaderTime.classList.add('new-table__header-cell');
-        // tableHeaderTime.textContent = 'Время набора';
-        // tableHeader.appendChild(tableHeaderTime);
-
-
         newTable.insertAdjacentHTML('beforeend', '' +
             '                 <thead>' +
             '                    <tr class="new-table__header">\n' +
@@ -127,7 +101,7 @@ view = {
         const mainObject = getMainObject();
         mainObject.orders.forEach((item) => {
             if (item.needMessage === true) {
-                this.sendMessage('Заказ ' + item.orderNumber + ' в наборе уже более ' + mainObject.expirationTime / 60 + ' минут');
+                this.sendMessage('Заказ ' + item.orderNumber + ' в наборе уже более ' + mainObject.messageTime / 60 + ' минут');
                 //console.log('Заказ ' + item.orderNumber + ' в наборе уже более ' + mainObject.expirationTime / 60 + ' минут')
                 item.messageSent = true;
                 item.needMessage = false;

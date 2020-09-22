@@ -43,5 +43,6 @@ function secondsTimeToNormal(seconds) {
     if (secs.length < 2) {
         secs = '0' + secs;
     }
-    return result = minutes + ':' + secs
+    const result = minutes + ':' + secs;
+    return result;
 }

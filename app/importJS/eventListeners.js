@@ -9,7 +9,11 @@ document.querySelector('.options__time-to-expire-button').addEventListener('clic
         expireTextArea.placeholder = expireTextArea.value;
         expireTextArea.value = '';
     } else {
-        //TODO: Дописать вывод на экран сообщения о том, что значение не введено
+        const messageBox = document.querySelector('.options__message-box-time-to-expire');
+        messageBox.style.display = 'block';
+        setTimeout(() => {
+            messageBox.style.display = 'none';
+        }, 1000)
     }
 })
 
@@ -23,20 +27,37 @@ document.querySelector('.options__time-to-send-message-button').addEventListener
         messageTextArea.value = '';
         setMainObject(mainObject);
     } else {
-        //TODO: дописать вывод на экран о том, что значение не введено
+        const messageBox = document.querySelector('.options__message-box-time-to-send-message');
+        messageBox.style.display = 'block';
+        setTimeout(() => {
+            messageBox.style.display = 'none';
+        }, 1000)
     }
 })
 
 document.querySelector('.options__request-interval-button').addEventListener('click', (e) => {
     e.preventDefault();
     const requestTextArea = document.querySelector('.options__request-interval');
-    if (requestTextArea.value && parseInt(requestTextArea.value) > 10) {
+    if (requestTextArea.value && parseInt(requestTextArea.value) >= 10) {
         const mainObject = getMainObject();
-        mainObject.requestInterval = parseInt(requestTextArea.value) * 1000;
+        mainObject.requestInterval = parseInt(requestTextArea.value);
         requestTextArea.placeholder = requestTextArea.value;
         requestTextArea.value = '';
         setMainObject(mainObject);
     } else {
-        //TODO: дописать вывод на экран о том, что значение не введено или меньше 10 сек
+        const messageBox = document.querySelector('.options__message-box-request-interval');
+        messageBox.style.display = 'block';
+        requestTextArea.value = '';
+        setTimeout(() => {
+            messageBox.style.display = 'none';
+        }, 1000)
+    }
+})
+
+document.querySelector('.reset').addEventListener('click', (e)=>{
+    const msg = prompt('Действительно? Все данные удалятся! Для продолжения введите "УДАЛИТЬ!" большими буквами');
+    if(msg ==='УДАЛИТЬ!'){
+        localStorage.clear();
+        window.location.reload();
     }
 })

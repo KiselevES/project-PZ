@@ -150,7 +150,6 @@ const model = {
 
     setWarning() {
         const mainObject = getMainObject();
-        console.log(mainObject);
         mainObject.orders.forEach((item) => {
             if (parseInt(new Date().getTime() / 1000) - item.unixTime > mainObject.messageTime && !item.complete && !item.messageSent) {
                 item.needMessage = true;

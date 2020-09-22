@@ -10,6 +10,7 @@ const gulp = require('gulp'),
     sourceMaps = require('gulp-sourcemaps'),
     stripCssComments = require('gulp-strip-css-comments'),
     babel = require('gulp-babel'),
+    htmlmin = require('gulp-html-minifier'),
     spritesmith = require('gulp.spritesmith');
 
 gulp.task('sass', () => {
@@ -83,13 +84,13 @@ gulp.task('clean', async () => {
     return clear.sync('dist')
 });
 
-gulp.task('build', () => {
+gulp.task('build', async () => {
     gulp.src('app/css/main.min.css')
         .pipe(stripCssComments())
         .pipe(gulp.dest('dist/css'));
 
-    gulp.src('app/fonts/ **/*')
-        .pipe(gulp.dest('dist/fonts'));
+    // gulp.src('app/fonts/ **/*')
+    //     .pipe(gulp.dest('dist/fonts'));
 
     gulp.src('app/js/**/*')
         .pipe(babel({
@@ -99,10 +100,11 @@ gulp.task('build', () => {
         .pipe(gulp.dest('dist/js'));
 
     gulp.src('app/*.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('dist'));
 
     gulp.src('app/img/**/*')
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist/img'));
 });
 
 gulp.task('watch', () => {

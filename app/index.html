@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400">
     <link rel="stylesheet" href="css/main.min.css">
-    <title>project PZ</title>
+    <title>Не просрочь заказ!</title>
 
 </head>
 <body>
@@ -15,10 +15,7 @@
     <header class="header">
         <div class="container">
             <div class="outer">
-                <div class="logo">
-                    <img class="logo__img" src="img/logo-akson-1.jpg" alt="logo">
-                </div>
-                <div class="header-text">Отслеживание просроченных заказов</div>
+                <div class="header-text">Отслеживание времени набора заказов</div>
             </div>
         </div>
     </header>
@@ -27,32 +24,59 @@
             <div class="orders">
                 <table class="hidden-table"></table>
                 <table class="new-table" border="0"></table>
+                <div class="instruction">
+                    <div class="instruction__item">
+                        <div class="instruction__sample instruction__sample_normal"></div>
+                        <div class="instruction__description">- не просрочен</div>
+                    </div>
+                    <div class="instruction__item">
+                        <div class="instruction__sample instruction__sample_warning"></div>
+                        <div class="instruction__description">- скоро просрочится</div>
+                    </div>
+                    <div class="instruction__item">
+                        <div class="instruction__sample instruction__sample_expired"></div>
+                        <div class="instruction__description">- просрочен</div>
+                    </div>
+                    <div class="instruction__item">
+                        <div class="instruction__sample instruction__sample_remade"></div>
+                        <div class="instruction__description">- перевыгружен</div>
+                    </div>
+                </div>
             </div>
+            <div class="telegram">Публичный Telegram-канал: <a href="https://t.me/expiredordersnotifier" class="telegram__link" target="_blank">@expiredOrdersNotifier</a></div>
             <div class="options">
                 <div class="input__outer">
                     <input class="options__time-to-expire input" id="expire" type="text" placeholder="30">
                     <button class="options__time-to-expire-button options__button">Изменить</button>
-                    <label class="options__label" for="expire">Минут до просрочки</label>
+                    <label class="options__label options__label-time-to-expire" for="expire"> - минут до просрочки
+                        <div class="options__message-box options__message-box-time-to-expire">Значение не введено!</div>
+                    </label>
                 </div>
 
                 <div class="input__outer">
                     <input class="options__time-to-send-message input" id="message" type="text" placeholder="23">
                     <button class="options__time-to-send-message-button options__button">Изменить</button>
-                    <label class="options__label" for="message">Минут до сообщения</label>
+                    <label class="options__label" for="message"> - минут до сообщения
+                        <div class="options__message-box options__message-box-time-to-send-message">Значение не введено!</div>
+                    </label>
                 </div>
 
                 <div class="input__outer">
                     <input class="options__request-interval input" id="interval" type="text" placeholder="30" placeholder="30">
                     <button class="options__request-interval-button options__button">Изменить</button>
-                    <label class="options__label" for="interval">Секунд - интервал запросов на сервер</label>
+                    <label class="options__label" for="interval"> - секунд - интервал запросов на сервер
+                        <div class="options__message-box options__message-box-request-interval">Значение не введено или меньше 10!</div>
+                    </label>
                 </div>
+                <button class="reset">Очистить БД</button>
             </div>
         </div>
     </div>
 </div>
 <footer class="footer">
     <div class="container">
-
+        <div class="version">v0.1</div>
+        <div class="source"><a href="https://github.com/KiselevES/project-PZ" target="_blank">Source: GitHub</a></div>
     </div>
 </footer>
 <script src="js/js.min.js"></script>
