@@ -1,6 +1,5 @@
 body {
-  background: #c6b4b4;
-  // margin-top: 10px;
+  background: #fff;
 }
 
 .telegram {
@@ -58,18 +57,6 @@ body {
   left: -260px;
 }
 
-.footer .container {
-  background: #e9011b;
-  height: 100%;
-  border-radius: 0 0 10px 10px;
-}
-
-
-.header .container {
-  background: #e9011b;
-  border-radius: 10px 10px 0 0;
-}
-
 .outer {
   margin: 0 auto;
   width: 431px;
@@ -81,19 +68,6 @@ body {
   }
 }
 
-//.logo {
-//  padding: 20px;
-//  float: left;
-//}
-
-.header-text {
-  color: #fff;
-  float: left;
-  font-size: 22px;
-  //margin-top: 50px;
-  font-weight: 400;
-}
-
 .logo__img {
   max-height: 85px;
 }
@@ -101,21 +75,6 @@ body {
 .table {
   display: none;
 }
-
-.main {
-
-  .container {
-    background: #d0d0d0;
-
-  }
-}
-
-.set-height {
-  border-right: 1px solid #e9011b;
-  border-left: 1px solid #e9011b;
-  padding: 15px;
-}
-
 
 td {
   width: 90px;
@@ -145,12 +104,7 @@ td {
     color: #fff;
     font-family: $body-font;
   }
-
-  //tbody:nth-child(2n) {
-  //  background: #d0d0d0;
-  //}
 }
-
 
 .new-table__header-cell {
   border-top: 0;
@@ -242,10 +196,22 @@ tbody:first-child .new-table__cell {
 .source {
   font-size: 10px;
   color: #fff;
+  margin-top: 50px;
 
   a {
     text-decoration: none;
     color: #fff;
   }
+}
+
+button {
+  display: inline-block;
+  background: #e9011b;
+  border: 0;
+  padding: 2px;
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 400;
+  cursor: pointer;
 }
 

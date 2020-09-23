@@ -96,6 +96,19 @@ const model = {
                     mainObject.orders.push(newContentObject.orders[i]);
                 }
             })
+
+            //если заказ уже есть в старом объекте, добавляем новый статус (в наборе)
+            for (let i = 0; i < newContentObject.orders.length; i++) {
+                if (ismainObjectContainsOrder(mainObject, newContentObject.orders[i].orderNumber) && newContentObject.orders[i].preparing) {
+                    for (let y = 0; y < mainObject.orders.length; y++) {
+                        if (mainObject.orders[y].orderNumber === newContentObject.orders[i].orderNumber) {
+                            mainObject.orders[y].preparing = true;
+                            mainObject.orders[y].inQueue = false;
+                        }
+                    }
+                }
+            }
+
             //если старого заказа нет в списке заказов нового объекта, помечаем старый подтвержденным
             mainObject.orders.forEach((item) => {
                 if (!getSameOrder(newContentObject, item.orderNumber)) {

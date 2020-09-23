@@ -50,7 +50,6 @@ gulp.task('scripts', () => {
         'app/importJS/MainObjectClass.js',
         'app/importJS/orderClass.js',
         'app/importJS/functions.js',
-        'app/importJS/adjustment.js',
         'app/importJS/Model.js',
         'app/importJS/View.js',
         'app/importJS/Controller.js',

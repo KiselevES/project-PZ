@@ -17,7 +17,8 @@ const controller = {
             })
 
         window.setTimeout(() => {
-            window.location.reload();
+            //this.mainRoute();
+             window.location.reload();
         }, interval * 1000);
     }
 }
