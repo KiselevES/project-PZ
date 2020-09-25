@@ -7,12 +7,12 @@ const model = {
 
             //ajax запрос через прокси cors-anywhere
             x.open('GET', 'https://cors-anywhere.herokuapp.com/https://akson.ru/personal/order/table1/?STORE_ID=11');
-            //x.open('GET', 'pz4.html');
+            //x.open('GET', 'pz3.html');
 
             //x.timeout = 5000;
             x.send();
             x.onload = () => {
-                if (x.status != 200) {
+                if (x.status !== 200) {
                     reject(x.statusText)
                 } else {
                     resolve(x.responseText || '');
@@ -73,6 +73,7 @@ const model = {
             mainObject.requestInterval = notFormattedmainObject.requestInterval;
             mainObject.messageTime = notFormattedmainObject.messageTime;
             mainObject.expirationTime = notFormattedmainObject.expirationTime;
+            mainObject.telegram = notFormattedmainObject.telegram;
 
             notFormattedmainObject.orders.forEach((item) => {
                 let currentOrder = new orderClass(item.orderNumber);
@@ -130,6 +131,9 @@ const model = {
                             mainObject.orders[i].preparing = item.preparing;
                             mainObject.orders[i].date = item.date;
                             mainObject.orders[i].needMessage = item.needMessage;
+                            let remadeOrder = mainObject.orders[i];
+                            mainObject.orders.push(remadeOrder);
+                            mainObject.orders.splice(i, 1);
                         }
                     }
                 }
@@ -170,6 +174,4 @@ const model = {
         })
         setMainObject(mainObject);
     }
-
-
 }

@@ -1,5 +1,5 @@
 const controller = {
-    mainRoute(){
+    mainRoute() {
         let interval = 10;
         if (isMainObjectExists()) {
             const mainObject = getMainObject();
@@ -12,13 +12,17 @@ const controller = {
                 model.setWarning();
                 view.sendMessages();
                 view.drawTable();
+                view.setTimer();
+                view.telegramCheckbox();
                 view.setPlaceholders();
+
+
                 document.getElementById('interval').scrollIntoView();
             })
 
         window.setTimeout(() => {
             //this.mainRoute();
-             window.location.reload();
+            window.location.reload();
         }, interval * 1000);
     }
 }

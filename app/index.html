@@ -16,6 +16,18 @@
         <div class="container">
             <div class="orders">
                 <table class="hidden-table"></table>
+                <div class="new-table__header-white-bg">
+                    <div class="new-table__header">
+
+                        <div class="new-table__header-cell">№</div>
+                        <div class="new-table__header-cell">Номер заказа</div>
+                        <div class="new-table__header-cell">В очереди</div>
+                        <div class="new-table__header-cell">В наборе</div>
+                        <div class="new-table__header-cell">Завершен</div>
+                        <div class="new-table__header-cell">Время</div>
+                    </div>
+
+                </div>
                 <table class="new-table"></table>
                 <div class="instruction">
                     <div class="instruction__item">
@@ -24,7 +36,7 @@
                     </div>
                     <div class="instruction__item">
                         <div class="instruction__sample instruction__sample_warning"></div>
-                        <div class="instruction__description">- скоро просрочится</div>
+                        <div class="instruction__description">- скоро просрочится, отправка уведомления в Telegram</div>
                     </div>
                     <div class="instruction__item">
                         <div class="instruction__sample instruction__sample_expired"></div>
@@ -36,12 +48,18 @@
                     </div>
                 </div>
             </div>
-            <div class="telegram">Публичный Telegram-канал: <a href="https://t.me/expiredordersnotifier" class="telegram__link" target="_blank">@expiredOrdersNotifier</a></div>
+            <div class="telegram">Telegram-канал: <a href="https://t.me/expiredordersnotifier"
+                                                               class="telegram__link" target="_blank">@expiredOrdersNotifier</a>
+            </div>
+            <div class="telegram__check">
+                <input class="telegram__checkbox" id="telegram__checkbox" type="checkbox">
+                <label for="telegram__checkbox" class="telegram__checkbox-label">Отправлять сообщения в Telegram </label>
+            </div>
             <div class="options">
                 <div class="input__outer">
                     <input class="options__time-to-expire input" id="expire" type="text" placeholder="30">
                     <button class="options__time-to-expire-button options__button">Изменить</button>
-                    <label class="options__label options__label-time-to-expire" for="expire">  минут до просрочки
+                    <label class="options__label options__label-time-to-expire" for="expire"> минут до просрочки
                         <div class="options__message-box options__message-box-time-to-expire">Значение не введено!</div>
                     </label>
                 </div>
@@ -49,26 +67,30 @@
                 <div class="input__outer">
                     <input class="options__time-to-send-message input" id="message" type="text" placeholder="23">
                     <button class="options__time-to-send-message-button options__button">Изменить</button>
-                    <label class="options__label" for="message">  минут до сообщения
-                        <div class="options__message-box options__message-box-time-to-send-message">Значение не введено!</div>
+                    <label class="options__label" for="message"> минут до предупреждения
+                        <div class="options__message-box options__message-box-time-to-send-message">Значение не
+                            введено!
+                        </div>
                     </label>
                 </div>
 
                 <div class="input__outer">
-                    <input class="options__request-interval input" id="interval" type="text" placeholder="30" placeholder="30">
+                    <input class="options__request-interval input" id="interval" type="text" placeholder="30"
+                           placeholder="30">
                     <button class="options__request-interval-button options__button">Изменить</button>
-                    <label class="options__label" for="interval">  секунд - интервал запросов на сервер
-                        <div class="options__message-box options__message-box-request-interval">Значение не введено или меньше 10!</div>
+                    <label class="options__label" for="interval"> секунд - интервал запросов на сервер
+                        <div class="options__message-box options__message-box-request-interval">Значение не введено или
+                            меньше 10!
+                        </div>
                     </label>
                 </div>
                 <button class="reset">Очистить БД</button>
-                <div class="source"><a href="https://github.com/KiselevES/project-PZ" target="_blank">Source: GitHub</a></div>
+                <div class="source"><a href="https://github.com/KiselevES/project-PZ" target="_blank">GitHub</a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-
 
 
 <script src="js/js.min.js"></script>

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://akson.ru/personal/order/table1/?STORE_ID=11 -->
+<html class="bx-no-touch bx-chrome bx-boxshadow bx-borderradius bx-flexwrap bx-boxdirection bx-transition bx-transform"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Сводная информация по заказам</title>
+<meta name="viewport" content="user-scalable=yes, width=1920">
+
+<link href="./Сводная информация по заказам_files/core.css" type="text/css" rel="stylesheet">
+<link href="./Сводная информация по заказам_files/style.css" type="text/css" rel="stylesheet">
+<link href="./Сводная информация по заказам_files/styles.css" type="text/css" rel="stylesheet">
+<link href="./Сводная информация по заказам_files/template_styles.css" type="text/css" rel="stylesheet">
+
+<script type="text/javascript" src="./Сводная информация по заказам_files/core.js"></script>
+<script type="text/javascript">(window.BX||top.BX).message({'LANGUAGE_ID':'ru','FORMAT_DATE':'DD.MM.YYYY','FORMAT_DATETIME':'DD.MM.YYYY HH:MI:SS','COOKIE_PREFIX':'BITRIX_SM_AKSON','USER_ID':'','SERVER_TIME':'1599996776','SERVER_TZ_OFFSET':'10800','USER_TZ_OFFSET':'0','USER_TZ_AUTO':'Y','bitrix_sessid':'5ba5fad432698d3871f5b2b53da13e0c','SITE_ID':'s1'});(window.BX||top.BX).message({'JS_CORE_LOADING':'Загрузка...','JS_CORE_NO_DATA':'- Нет данных -','JS_CORE_WINDOW_CLOSE':'Закрыть','JS_CORE_WINDOW_EXPAND':'Развернуть','JS_CORE_WINDOW_NARROW':'Свернуть в окно','JS_CORE_WINDOW_SAVE':'Сохранить','JS_CORE_WINDOW_CANCEL':'Отменить','JS_CORE_H':'ч','JS_CORE_M':'м','JS_CORE_S':'с','JSADM_AI_HIDE_EXTRA':'Скрыть лишние','JSADM_AI_ALL_NOTIF':'Показать все','JSADM_AUTH_REQ':'Требуется авторизация!','JS_CORE_WINDOW_AUTH':'Войти','JS_CORE_IMAGE_FULL':'Полный размер'});</script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/core_ajax.js"></script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/session.js"></script>
+<script type="text/javascript">
+bxSession.Expand(1800, '5ba5fad432698d3871f5b2b53da13e0c', false, 'dcc83d9e3ff2ec429082acb7b84c3283');
+</script>
+<link rel="icon" href="https://akson.ru/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="https://akson.ru/favicon.ico" type="image/x-icon">
+<script type="text/javascript" src="./Сводная информация по заказам_files/kladr.js"></script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/jquery.scrollTo.js"></script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/jquery.serialScroll.js"></script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/init-scripts.js"></script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/order-information-page.js"></script>
+<script type="text/javascript" src="./Сводная информация по заказам_files/script.js"></script>
+</head>
+<body cz-shortcut-listen="true">
+	<script>
+		$(document).ready(function() {
+			var $news = $('.table-info2');//we'll re use it a lot, so better save it to a var.
+				$news.serialScroll({
+					items:'div',
+					duration:3000,
+					force:true,
+					axis:'y',
+					easing:'linear',
+					lazy:true,// NOTE: it's set to true, meaning you can add/remove/reorder items and the changes are taken into account.
+					interval:1, // yeah! I now added auto-scrolling
+					step:2 // scroll 2 news each time
+				});
+				//$('.table-info2').scrollTo( $('.table-info2 tr:last-child'), 800 );
+		});
+	</script>
+
+<ul class="order-list-wrapper">
+	<li class="table">
+					<table class="table-info ">
+				<tbody><tr>
+					<th rowspan="1" class="ord th__va th__bb">
+						<div>Заказ №</div>
+					</th>
+					<th colspan="1" class="th__va th__bb th__bl">
+						<div>Ожидает набора</div>
+					</th>
+					<th colspan="1" class="th__va th__bb th__bl">
+						<div>Набирается</div>
+					</th>
+										<th rowspan="1" class="mark th__va th__bb th__bl">
+						<div>Разобрать</div>
+					</th>
+									</tr>
+									<tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119820								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr>
+									<tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119812								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119948								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									211949								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119951								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119522								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr>
+											<tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119953								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119954								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119955								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119956								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119957								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119958								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119959								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									211960								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119961								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119962								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119963								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119964								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119965								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119966								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119967								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119968								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119969								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr><tr>
+						<td>
+							<div class="cell">
+								<div>
+									2119970								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>							</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+																							</div>
+						</td>
+											</tr>
+									<tr>
+						<td>
+							<div class="cell">
+								<div>
+									2111950								</div>
+							</div>
+						</td>
+
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+						<td>
+							<div class="cell mark ">
+															</div>
+						</td>
+												<td>
+							<div class="cell mark ">
+								<div><i class="check"></i></div>															</div>
+						</td>
+											</tr>
+				
+			</tbody></table>
+    				<table class="table-info ">
+				<tbody><tr>
+					<th rowspan="1" class="ord th__va th__bb">
+						<div>Заказ №</div>
+					</th>
+					<th colspan="1" class="th__va th__bb th__bl">
+						<div>Ожидает набора</div>
+					</th>
+					<th colspan="1" class="th__va th__bb th__bl">
+						<div>Набирается</div>
+					</th>
+										<th rowspan="1" class="mark th__va th__bb th__bl">
+						<div>Разобрать</div>
+					</th>
+									</tr>
+				
+			</tbody></table>
+    		</li>
+</ul>
+
+	<form action="https://akson.ru/personal/order/table1/?STORE_ID=11" method="post">
+	  <input id="urlPrms" name="" type="hidden" value="STORE_ID=11">
+	</form>
+
+	
+</body></html>

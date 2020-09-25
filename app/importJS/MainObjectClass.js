@@ -11,5 +11,8 @@ class mainObjectClass {
 
         //пустой массив под заказы
         this.orders = [];
+
+        //отправка сообщений в Telegram
+        this.telegram = true;
     }
 }

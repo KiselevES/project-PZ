@@ -54,10 +54,32 @@ document.querySelector('.options__request-interval-button').addEventListener('cl
     }
 })
 
-document.querySelector('.reset').addEventListener('click', (e)=>{
+document.querySelector('.reset').addEventListener('click', (e) => {
+    e.preventDefault();
     const msg = prompt('Действительно? Все данные удалятся! Для продолжения введите "УДАЛИТЬ!" большими буквами');
-    if(msg ==='УДАЛИТЬ!'){
+    if (msg === 'УДАЛИТЬ!') {
         localStorage.clear();
         window.location.reload();
     }
+
+
+})
+
+document.addEventListener('scroll', () => {
+    console.log(document.querySelector('.new-table__header').getBoundingClientRect());
+    console.log(window.scrollY);
+    const header = document.querySelector('.new-table__header-white-bg');
+    if (window.scrollY > header.getBoundingClientRect().y) {
+        header.style.position = 'fixed';
+        header.style.top = '0';
+    } else {
+        header.style.position = 'static';
+    }
+})
+
+document.querySelector('.telegram__checkbox').addEventListener('change', () => {
+    const mainObject = getMainObject();
+    const checkBox = document.querySelector('.telegram__checkbox');
+    mainObject.telegram = !!checkBox.checked;
+    setMainObject(mainObject);
 })

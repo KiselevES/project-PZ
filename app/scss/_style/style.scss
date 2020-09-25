@@ -2,7 +2,7 @@ body {
   background: #fff;
 }
 
-.telegram {
+.telegram__check {
   margin-bottom: 10px;
 }
 
@@ -10,6 +10,10 @@ body {
   text-decoration: none;
   font-weight: 400;
   color: #0088cc;
+}
+
+.telegram__checkbox-label {
+  margin-left: 5px;
 }
 
 .options__label {
@@ -84,36 +88,51 @@ td {
   vertical-align: middle;
 }
 
+.new-table__header {
+  font-size: 0;
+  width: 940px;
+  background: #e9011b;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  z-index: 9000;
+}
+
+.new-table__header-white-bg {
+  width: 100%;
+  height: 22px;
+  background: #fff;
+  position: relative;
+  z-index: 8000;
+}
+
 .check:after {
   display: inline-block;
   content: 'X';
 }
 
 .new-table {
+  position: relative;
   border: 1px solid #e9011b;
   width: 100%;
-  margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   border-spacing: 0;
   overflow: hidden;
-  // background: #bababa;
-  margin-bottom: 10px;
-
-  thead {
-    background: #e9011b;
-    color: #fff;
-    font-family: $body-font;
-  }
+  margin: 0 auto 10px;
+  z-index: 5000;
 }
 
 .new-table__header-cell {
-  border-top: 0;
-  border-right: 0;
-  border-left: 1px solid #e9011b;
-  border-bottom: 1px solid #e9011b;
+  display: inline-block;
+  background: #e9011b;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  width: 18.71%;
+  font-size: 16px;
 
   &:first-child {
-    border-left: 0;
+    width: 6.4%;
+
   }
 }
 
