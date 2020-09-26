@@ -84,17 +84,17 @@ const view = {
         const mainObject = getMainObject();
         document.querySelectorAll('.new-table__tbody').forEach((item) => {
             if (item.children[0].children[4].innerHTML.length === 0) {
-                setInterval(()=>{
+                setInterval(() => {
                     let unixTime = 0;
                     let orderNumber = parseInt(item.children[0].children[1].innerHTML);
-                    for(let i = 0; i < mainObject.orders.length; i++){
-                        if(mainObject.orders[i].orderNumber == orderNumber){
+                    for (let i = 0; i < mainObject.orders.length; i++) {
+                        if (mainObject.orders[i].orderNumber == orderNumber) {
                             unixTime = mainObject.orders[i].unixTime;
                         }
                     }
                     let currentUnixTime = parseInt(new Date().getTime() / 1000);
                     item.children[0].children[5].innerHTML = secondsTimeToNormal(currentUnixTime - unixTime);
-                },1000)
+                }, 1000)
             }
         })
     },
@@ -140,6 +140,20 @@ const view = {
             checkBox.setAttribute('checked', 'true');
         } else {
             checkBox.removeAttribute('checked');
+        }
+    },
+
+    instruction() {
+        const mainObject = getMainObject();
+        const desc = document.querySelector('.introduction__desc');
+        const button = document.querySelector('.introduction__button');
+        const box = document.querySelector('.introduction__box');
+        const outer = document.querySelector('.introduction__outer');
+        if (mainObject.instruction) {
+            box.style.display = 'block';
+            outer.style.display = 'block';
+            desc.textContent = 'свернуть инструкцию';
+            button.textContent = '-';
         }
     }
 }

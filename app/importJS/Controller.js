@@ -10,13 +10,12 @@ const controller = {
             .then((response) => {
                 model.getContent(response);
                 model.setWarning();
+                view.instruction();
                 view.sendMessages();
                 view.drawTable();
                 view.setTimer();
                 view.telegramCheckbox();
                 view.setPlaceholders();
-
-
                 document.getElementById('interval').scrollIntoView();
             })
 

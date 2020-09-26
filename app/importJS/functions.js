@@ -46,3 +46,26 @@ function secondsTimeToNormal(seconds) {
     const result = minutes + ':' + secs;
     return result;
 }
+
+function deployInstruction(e) {
+    e.preventDefault();
+    const mainObject = getMainObject();
+    const desc = document.querySelector('.introduction__desc');
+    const button = document.querySelector('.introduction__button');
+    const box = document.querySelector('.introduction__box');
+    const outer = document.querySelector('.introduction__outer');
+    if (button.textContent === '+') {
+        box.style.display = 'block';
+        outer.style.display = 'block';
+        button.textContent = '-';
+        desc.textContent = 'свернуть инструкцию';
+        mainObject.instruction = true;
+    } else if (button.textContent === '-') {
+        box.style.display = 'none';
+        outer.style.display = 'none';
+        button.textContent = '+';
+        desc.textContent = 'развернуть инструкцию';
+        mainObject.instruction = false;
+    }
+    setMainObject(mainObject);
+}

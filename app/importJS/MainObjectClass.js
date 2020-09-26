@@ -14,5 +14,8 @@ class mainObjectClass {
 
         //отправка сообщений в Telegram
         this.telegram = true;
+
+        //развернуть инструкцию
+        this.instruction = false;
     }
 }

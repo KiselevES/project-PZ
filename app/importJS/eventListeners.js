@@ -2,7 +2,7 @@
 document.querySelector('.options__time-to-expire-button').addEventListener('click', (e) => {
     e.preventDefault();
     const expireTextArea = document.querySelector('.options__time-to-expire');
-    if (expireTextArea.value) {
+    if (expireTextArea.value && !isNaN(expireTextArea.value)) {
         const mainObject = getMainObject();
         mainObject.expirationTime = parseInt(expireTextArea.value) * 60;
         setMainObject(mainObject);
@@ -11,6 +11,7 @@ document.querySelector('.options__time-to-expire-button').addEventListener('clic
     } else {
         const messageBox = document.querySelector('.options__message-box-time-to-expire');
         messageBox.style.display = 'block';
+        expireTextArea.value = '';
         setTimeout(() => {
             messageBox.style.display = 'none';
         }, 1000)
@@ -20,7 +21,7 @@ document.querySelector('.options__time-to-expire-button').addEventListener('clic
 document.querySelector('.options__time-to-send-message-button').addEventListener('click', (e) => {
     e.preventDefault();
     const messageTextArea = document.querySelector('.options__time-to-send-message');
-    if (messageTextArea.value) {
+    if (messageTextArea.value && !isNaN(messageTextArea.value)) {
         const mainObject = getMainObject();
         mainObject.messageTime = parseInt(messageTextArea.value) * 60;
         messageTextArea.placeholder = messageTextArea.value;
@@ -29,6 +30,7 @@ document.querySelector('.options__time-to-send-message-button').addEventListener
     } else {
         const messageBox = document.querySelector('.options__message-box-time-to-send-message');
         messageBox.style.display = 'block';
+        messageTextArea.value = '';
         setTimeout(() => {
             messageBox.style.display = 'none';
         }, 1000)
@@ -38,7 +40,7 @@ document.querySelector('.options__time-to-send-message-button').addEventListener
 document.querySelector('.options__request-interval-button').addEventListener('click', (e) => {
     e.preventDefault();
     const requestTextArea = document.querySelector('.options__request-interval');
-    if (requestTextArea.value && parseInt(requestTextArea.value) >= 10) {
+    if (requestTextArea.value && !isNaN(requestTextArea.value) && parseInt(requestTextArea.value) >= 10) {
         const mainObject = getMainObject();
         mainObject.requestInterval = parseInt(requestTextArea.value);
         requestTextArea.placeholder = requestTextArea.value;
@@ -66,8 +68,6 @@ document.querySelector('.reset').addEventListener('click', (e) => {
 })
 
 document.addEventListener('scroll', () => {
-    console.log(document.querySelector('.new-table__header').getBoundingClientRect());
-    console.log(window.scrollY);
     const header = document.querySelector('.new-table__header-white-bg');
     if (window.scrollY > header.getBoundingClientRect().y) {
         header.style.position = 'fixed';
@@ -83,3 +83,5 @@ document.querySelector('.telegram__checkbox').addEventListener('change', () => {
     mainObject.telegram = !!checkBox.checked;
     setMainObject(mainObject);
 })
+
+document.querySelector('.introduction__link').addEventListener('click', deployInstruction);

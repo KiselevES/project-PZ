@@ -74,6 +74,7 @@ const model = {
             mainObject.messageTime = notFormattedmainObject.messageTime;
             mainObject.expirationTime = notFormattedmainObject.expirationTime;
             mainObject.telegram = notFormattedmainObject.telegram;
+            mainObject.instruction = notFormattedmainObject.instruction;
 
             notFormattedmainObject.orders.forEach((item) => {
                 let currentOrder = new orderClass(item.orderNumber);

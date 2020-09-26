@@ -1,5 +1,20 @@
 body {
   background: #fff;
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 12px;
+
+    &-track {
+      border-radius: 10px;
+    }
+
+    &-thumb {
+      background-color: #e9011b;
+      border-radius: 10px;
+      border: 3px solid #fff;
+    }
+  }
 }
 
 .telegram__check {
@@ -44,21 +59,49 @@ body {
   font-size: 16px;
   color: #e9011b;
   display: none;
+
+  &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 0px;
+    height: 0px;
+    border: 10px solid transparent;
+    border-top: 10px solid #fff;
+    bottom: -60%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 0px;
+    height: 0px;
+    border: 10px solid transparent;
+    border-top: 10px solid #e9011b;
+    bottom: -62%;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
 
 .options__message-box-time-to-expire {
-  top: -40px;
-  left: -200px;
+  top: -42px;
+  left: -212px;
 }
 
 .options__message-box-time-to-send-message {
-  top: -40px;
-  left: -200px;
+  top: -42px;
+  left: -212px;
 }
 
 .options__message-box-request-interval {
-  top: -40px;
-  left: -260px;
+  top: -42px;
+  left: -255px;
 }
 
 .outer {
@@ -232,5 +275,76 @@ button {
   border-radius: 5px;
   font-weight: 400;
   cursor: pointer;
+}
+
+.introduction {
+  margin-top: 10px;
+}
+
+.introduction__link {
+  text-decoration: none;
+  color: #000;
+
+  &:visited {
+    color: #000;
+  }
+}
+
+.introduction__button {
+  width: 9px;
+  height: 9px;
+  border: 1px solid #e9011b;
+  display: inline-block;
+  color: #e9011b;
+  line-height: 8px;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.introduction__desc {
+  font-size: 12px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.introduction__outer{
+  width: 500px;
+  height: 100%;
+  border: 1px solid #e9011b;
+  border-radius: 10px;
+  display: none;
+}
+
+.introduction__item {
+  margin-bottom: 10px;
+}
+
+.introduction__box {
+  width: 496px;
+  font-size: 12px;
+  height: 100px;
+  overflow-y: scroll;
+  border: 2px solid #fff;
+  display: none;
+  border-radius: 10px;
+  margin: 3px 0;
+  padding: 10px;
+  transition: .5s;
+
+
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 7px;
+
+    &-track {
+      border-radius: 10px;
+    }
+
+    &-thumb {
+      background-color: #e9011b;
+      border-radius: 10px;
+    }
+  }
 }
 
