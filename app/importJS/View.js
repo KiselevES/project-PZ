@@ -2,6 +2,7 @@ const view = {
     drawTable() {
         const mainObject = getMainObject();
         const newTable = document.querySelector('.new-table');
+        newTable.innerHTML = '';
         let counter = 1;
         mainObject.orders.forEach((item) => {
 
@@ -105,8 +106,7 @@ const view = {
         x.send();
 
 
-    }
-    ,
+    },
 
     sendMessages() {
         const mainObject = getMainObject();
@@ -122,16 +122,14 @@ const view = {
         })
         setMainObject(mainObject);
         //console.log(mainObject);
-    }
-    ,
+    },
 
     setPlaceholders() {
         const mainObject = getMainObject();
         document.querySelector('.options__time-to-expire').placeholder = mainObject.expirationTime / 60;
         document.querySelector('.options__time-to-send-message').placeholder = mainObject.messageTime / 60;
         document.querySelector('.options__request-interval').placeholder = mainObject.requestInterval;
-    }
-    ,
+    },
 
     telegramCheckbox() {
         const mainObject = getMainObject();

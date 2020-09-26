@@ -1,6 +1,6 @@
 const controller = {
     mainRoute() {
-        let interval = 10;
+        let interval = 15;
         if (isMainObjectExists()) {
             const mainObject = getMainObject();
             interval = mainObject.requestInterval;
@@ -17,11 +17,15 @@ const controller = {
                 view.telegramCheckbox();
                 view.setPlaceholders();
                 document.getElementById('interval').scrollIntoView();
+            }, () => {
+                setTimeout(()=>{
+                    window.location.reload();
+                },10000)
             })
 
         window.setTimeout(() => {
-            //this.mainRoute();
-            window.location.reload();
+            this.mainRoute();
+            //window.location.reload();
         }, interval * 1000);
     }
 }

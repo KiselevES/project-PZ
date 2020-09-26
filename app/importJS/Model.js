@@ -7,9 +7,14 @@ const model = {
 
             //ajax запрос через прокси cors-anywhere
             x.open('GET', 'https://cors-anywhere.herokuapp.com/https://akson.ru/personal/order/table1/?STORE_ID=11');
-            //x.open('GET', 'pz3.html');
+            //x.open('GET', 'pz4q.html');
 
-            //x.timeout = 5000;
+            x.timeout = 10000;
+            x.ontimeout = () => {
+                 setTimeout(()=>{
+                     window.location.reload();
+                 },10000)
+            };
             x.send();
             x.onload = () => {
                 if (x.status !== 200) {
@@ -28,7 +33,7 @@ const model = {
         const hiddenTable = document.querySelector('.hidden-table');
         hiddenTable.innerHTML = cutExternalContent;
         //вытаскиваем строки
-        const rows = document.getElementsByTagName('tr');
+        const rows = hiddenTable.getElementsByTagName('tr');
         //переменная для строк фильтрованной таблицы
         let filteredRows = [];
 

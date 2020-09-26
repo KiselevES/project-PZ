@@ -1,7 +1,7 @@
 class mainObjectClass {
     constructor() {
         //интервал запросов
-        this.requestInterval = 10;
+        this.requestInterval = 15;
 
         //время отправки сообщения (переаодим в сек)
         this.messageTime = 23 * 60;

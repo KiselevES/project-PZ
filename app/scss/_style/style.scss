@@ -300,6 +300,7 @@ button {
   font-size: 13px;
   text-align: center;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .introduction__desc {
@@ -335,7 +336,7 @@ button {
 
   &::-webkit-scrollbar {
     background-color: transparent;
-    width: 7px;
+    width: 6px;
 
     &-track {
       border-radius: 10px;
