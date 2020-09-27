@@ -69,7 +69,7 @@ document.querySelector('.reset').addEventListener('click', (e) => {
 
 document.addEventListener('scroll', () => {
     const header = document.querySelector('.new-table__header-white-bg');
-    if (window.scrollY > header.getBoundingClientRect().y) {
+    if (window.scrollY > header.getBoundingClientRect().top) {
         header.style.position = 'fixed';
         header.style.top = '0';
     } else {

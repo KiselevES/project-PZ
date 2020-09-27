@@ -7,7 +7,7 @@ const model = {
 
             //ajax запрос через прокси cors-anywhere
             x.open('GET', 'https://cors-anywhere.herokuapp.com/https://akson.ru/personal/order/table1/?STORE_ID=11');
-            //x.open('GET', 'pz4q.html');
+            //x.open('GET', 'pz4.html');
 
             x.timeout = 10000;
             x.ontimeout = () => {
